@@ -33,11 +33,11 @@ app.post('/api/members/',middlewareObj.checkdataisvalid,(req,res) => {
 
     console.log(d)
     
-    let name = req.body.name
-    let gender = req.body.gender
-    let email = req.body.email
-    let mobile = req.body.mobile
-    let message = req.body?.mobile
+    let name = d.name
+    let gender = d.gender
+    let email = d.email
+    let mobile = d.mobile
+    let message = d?.message
     let newmember={
         name:name,
         gender:gender,
