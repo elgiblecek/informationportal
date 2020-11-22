@@ -46,7 +46,7 @@ app.post('/api/members/',middlewareObj.checkdataisvalid,(req,res) => {
         message:message
     }
     data.push(newmember)
-	res.status('500').send('Successfully added');
+	res.status('200').send('Successfully added');
 })
 
 const port = process.env.PORT || 3000;
