@@ -8,8 +8,7 @@ let cors = require('cors')
 
 app.use(cors())
 
-// app.use(bodyParser.urlencoded({extended: false}));
-// app.use(express.json())
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -31,24 +30,11 @@ app.get('/api/members/:name', (req,res)=>{
 
 })
 
-app.post('/api/members/',(req,res) => {
+app.post('/api/members/',middlewareObj.checkdataisvalid,(req,res) => {
     
-    // const d = (JSON.stringify(req.body))
-
-    // console.log(req.body)
+    
     let d = req.body
-    // let name = req.body.name
-    // let gender = req.body.gender
-    // let email = req.body.email
-    // let mobile = req.body.mobile
-    // let message = req.body?.message
-    // let newmember={
-    //     name:name,
-    //     gender:gender,
-    //     email:email,
-    //     mobile:mobile,
-    //     message:message
-    // }
+  
 
     
 
