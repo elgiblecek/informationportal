@@ -44,7 +44,7 @@ app.post('/api/login/', (req,res) => {
   
    if(req.body.email != null && req.body.password != null){
         const token = jwt.sign({ sub: '7' }, config.secret, { expiresIn: '7d' });
-        res.cookie("SESSIONID", token, {httpOnly:false, secure:true}).json({
+        res.cookie("SESSIONID", token, {httpOnly:false}).json({
             message: 'User found',
             token:token
           });
